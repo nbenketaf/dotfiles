@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="nab"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -13,6 +13,9 @@ ZSH_THEME="robbyrussell"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
+
+# Uncomment following line to disable update prompt, oh-my-zsh will auto update silently
+DISABLE_UPDATE_PROMPT=true
 
 # Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -50,8 +53,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export SONAR_RUNNER_HOME=$HOME/src/sonar-runner-2.4
+export PATH=$HOME/bin:/usr/local/bin:$SONAR_RUNNER_HOME/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR="vim"
