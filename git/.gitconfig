@@ -1,7 +1,11 @@
 [user]
 	email = nbenketaf@gmail.com
+	name = Nabil Benketaf
 [core]
+	editor = vim
 	excludesfile = /Users/nbenketaf/.gitignore_global
+[web]
+	browser = google-chrome
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

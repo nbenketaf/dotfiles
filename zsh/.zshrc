@@ -55,6 +55,16 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export SONAR_RUNNER_HOME=$HOME/src/sonar-runner-2.4
 export PATH=$HOME/bin:/usr/local/bin:$SONAR_RUNNER_HOME/bin:$PATH
+# Set java 7 default version
+# export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+# More convenient java_home use
+alias java_ls='/usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d[,_]" | cut -d , -f 1 | colrm 1 4 | grep -v Home'
+# Set particular java version as JAVA_HOME, usage : java_use 1.7
+function java_use() {
+	export JAVA_HOME=$(/usr/libexec/java_home -v $1)
+        export PATH=$JAVA_HOME/bin:$PATH
+	java -version
+}
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR="vim"
@@ -79,3 +89,5 @@ bindkey '^N' history-search-forward
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+#SSH aliases
+alias zelda='ssh zelda'
