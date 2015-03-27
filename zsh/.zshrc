@@ -48,13 +48,12 @@ DISABLE_UPDATE_PROMPT=true
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bash git osx sublime mvn ssh-agent lein brew dircycle history jump)
+plugins=(bash git osx sublime mvn ssh-agent lein brew dircycle history jump tmux)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export SONAR_RUNNER_HOME=$HOME/src/sonar-runner-2.4
-export PATH=$HOME/bin:/usr/local/bin:$SONAR_RUNNER_HOME/bin:$PATH
 # Set java 7 default version
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 # More convenient java_home use
@@ -65,16 +64,18 @@ function java_use() {
         export PATH=$JAVA_HOME/bin:$PATH
 	java -version
 }
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$SONAR_RUNNER_HOME/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR="vim"
-bindkey -v 
+#bindkey -v 
 
 # vi style incremental search
-bindkey '^R' history-incremental-search-backward
-bindkey '^S' history-incremental-search-forward
-bindkey '^P' history-search-backward
-bindkey '^N' history-search-forward
+#bindkey '^R' history-incremental-search-backward
+#bindkey '^S' history-incremental-search-forward
+#bindkey '^P' history-search-backward
+#bindkey '^N' history-search-forward
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
