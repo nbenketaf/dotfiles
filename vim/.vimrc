@@ -25,7 +25,8 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 " open a new vertical split and switch over to it
-nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>h <C-w>s<C-w>j
 " move around splits
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j

@@ -92,3 +92,9 @@ export EDITOR="vim"
 
 #SSH aliases
 alias zelda='ssh zelda'
+
+# VSCT aliases
+alias wallix='ssh nabil_benketaf@wallix'
+alias vachefolle='ssh -l adminapptest@chiwawa:nabil_benketaf wallix -t "ssh vachefolle-bck -t "sudo su - waspaou1""'
+alias sweetspice='ssh -l adminapptest@chiwawa:nabil_benketaf wallix -t "ssh sweetspice-bck -t "sudo su - wascmia3""'
+alias miniegg='ssh -l adminapptest@chiwawa:nabil_benketaf wallix -t "ssh miniegg-bck -t "sudo su - wascmia3""'
