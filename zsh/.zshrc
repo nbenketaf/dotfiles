@@ -86,7 +86,10 @@ export EDITOR="vim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
+#
+# Fuck alias
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias vi='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
@@ -94,6 +97,8 @@ export EDITOR="vim"
 alias zelda='ssh zelda'
 
 # VSCT aliases
+alias gilan='ssh nabil_benketaf@gilan'
+alias tyrell='ssh nabil_benketaf@tyrell'
 alias wallix='ssh nabil_benketaf@wallix'
 alias vachefolle='ssh -l adminapptest@chiwawa:nabil_benketaf wallix -t "ssh vachefolle-bck -t "sudo su - waspaou1""'
 alias sweetspice='ssh -l adminapptest@chiwawa:nabil_benketaf wallix -t "ssh sweetspice-bck -t "sudo su - wascmia3""'

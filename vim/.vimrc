@@ -43,7 +43,21 @@ set autoindent
 " copy the previous indentation on
 set copyindent
 " always show line numbers
-set number
+set nu
+set rnu
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+" mapping moving lines up and down
+" Ï == <A-j> == Alt+j
+" È == <A-k> == Alt+k
+nnoremap Ï :m .+1<CR>==
+nnoremap È :m .-2<CR>==
+inoremap Ï <Esc>:m .+1<CR>==gi
+inoremap È <Esc>:m .-2<CR>==gi
+vnoremap Ï :m '>+1<CR>gv=gv
+vnoremap È :m '<-2<CR>gv=gv
+
 " number of spaces to use for
 set shiftwidth=4
 " use multiple of shiftwidth when indenting with '<' and '>'
@@ -105,3 +119,6 @@ let g:airline_theme='solarized'
 
 """ Show command before it timeouts
 set showcmd
+
+""" Show undo tree
+nnoremap <F6> :GundoToggle<CR>
