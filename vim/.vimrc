@@ -2,6 +2,7 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
 
 """ change the mapleader from \ to ,
 let mapleader=","
@@ -50,6 +51,10 @@ autocmd InsertLeave * :set relativenumber
 
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
+
+" switch to the next or previous buffer
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 
 " mapping moving lines up and down
 " Ï == <A-j> == Alt+j
