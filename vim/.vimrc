@@ -48,6 +48,9 @@ set rnu
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
+
 " mapping moving lines up and down
 " Ï == <A-j> == Alt+j
 " È == <A-k> == Alt+k
