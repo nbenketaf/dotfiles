@@ -53,7 +53,6 @@ plugins=(bash git osx sublime mvn ssh-agent lein brew dircycle history jump tmux
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export SONAR_RUNNER_HOME=$HOME/src/sonar-runner-2.4
 # Set java 7 default version
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 # More convenient java_home use
@@ -65,7 +64,7 @@ function java_use() {
 	java -version
 }
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export PATH=$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$SONAR_RUNNER_HOME/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR="vim"
@@ -95,11 +94,3 @@ alias vi='vim'
 
 #SSH aliases
 alias zelda='ssh zelda'
-
-# VSCT aliases
-alias gilan='ssh nabil_benketaf@gilan'
-alias tyrell='ssh nabil_benketaf@tyrell'
-alias wallix='ssh nabil_benketaf@wallix'
-alias vachefolle='ssh -l adminapptest@chiwawa:nabil_benketaf wallix -t "ssh vachefolle-bck -t "sudo su - waspaou1""'
-alias sweetspice='ssh -l adminapptest@chiwawa:nabil_benketaf wallix -t "ssh sweetspice-bck -t "sudo su - wascmia3""'
-alias miniegg='ssh -l adminapptest@chiwawa:nabil_benketaf wallix -t "ssh miniegg-bck -t "sudo su - wascmia3""'
