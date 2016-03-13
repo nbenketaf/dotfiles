@@ -7,7 +7,7 @@ set omnifunc=syntaxcomplete#Complete
 """ change the mapleader from \ to ,
 let mapleader=","
 
-" Quickly edit/reload the vimrc file
+""" Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
@@ -57,14 +57,14 @@ nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 
 " mapping moving lines up and down
-" Ï == <A-j> == Alt+j
-" È == <A-k> == Alt+k
-nnoremap Ï :m .+1<CR>==
-nnoremap È :m .-2<CR>==
-inoremap Ï <Esc>:m .+1<CR>==gi
-inoremap È <Esc>:m .-2<CR>==gi
-vnoremap Ï :m '>+1<CR>gv=gv
-vnoremap È :m '<-2<CR>gv=gv
+" ∆ == <A-j> == Alt+j
+" ˚ == <A-k> == Alt+k
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
 
 " number of spaces to use for
 set shiftwidth=4
@@ -95,11 +95,16 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 """ Set Inconsolata default gui font
 if has('gui_running')
 "    set guifont=Inconsolata:h14
-    set guifont=Inconsolata\ for\ powerline:h14
+    "set guifont=Inconsolata\ for\ powerline:h14
+    "set guifont=Inconsolata-g\ for\ Powerline:h12
+    set guifont=Office\ Code\ Pro:h13
     set background=light
 else
     set background=dark
 endif
+
+""" Remove right scrollbar on gui mode
+set guioptions-=r
 
 """ Enable mouse
 set mouse=a
@@ -115,8 +120,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -129,4 +134,4 @@ let g:airline_theme='solarized'
 set showcmd
 
 """ Show undo tree
-nnoremap <F6> :GundoToggle<CR>
+nnoremap <F6> :UndotreeToggle<CR>

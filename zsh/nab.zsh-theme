@@ -8,23 +8,23 @@
 # -----------------------------------------------------------------------------
 
 #use extended color pallete if available
-if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
-    turquoise="%F{81}"
+#if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
+#    turquoise="%F{81}"
     orange="%F{166}"
-    purple="%F{135}"
-    hotpink="%F{161}"
-    limegreen="%F{118}"
+#    purple="%F{135}"
+#    hotpink="%F{161}"
+#    limegreen="%F{118}"
     yellow="%F{136}"
     green="%F{64}"
     red="%F{160}"
     blue="%F{33}"
-else
-    turquoise="$fg[cyan]"
-    orange="$fg[yellow]"
-    purple="$fg[magenta]"
-    hotpink="$fg[red]"
-    limegreen="$fg[green]"
-fi
+#else
+#    turquoise="$fg[cyan]"
+#    orange="$fg[yellow]"
+#    purple="$fg[magenta]"
+#    hotpink="$fg[red]"
+#    limegreen="$fg[green]"
+#fi
 
 bold=$(tput bold)
 
