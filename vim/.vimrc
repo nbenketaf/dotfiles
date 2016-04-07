@@ -103,8 +103,11 @@ else
     set background=dark
 endif
 
-""" Remove right scrollbar on gui mode
+""" Remove scrollbars on gui mode
 set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
 
 """ Enable mouse
 set mouse=a
