@@ -44,9 +44,9 @@ function precmd() {
    #$fg[cyan]%n $fg[white]at $fg[yellow]%m $fg[white]in %{$reset_color%}$(get_pwd) $(git_prompt_info)'
 }
 
-local ret_status="%(?:%{$fg_bold[green]%}λ:%{$fg_bold[red]%}λ%s)"
+local ret_status="%(?:%{$green%}λ:%{$red%}λ%s)"
 PROMPT='$(git_prompt_status) ${ret_status} % %{$reset_color%}'
-#RPROMPT='$(date +%c)'
+RPROMPT='[%D{%d/%m/%y} %*]'
 
 MODE_INDICATOR="%{$fg_bold[red]%}❮%{$reset_color%}%{$fg[red]%}❮❮%{$reset_color%}"
 
