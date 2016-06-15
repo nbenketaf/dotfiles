@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 #          FILE: nab.zsh-theme
 #   DESCRIPTION: oh-my-zsh theme file.
-#        AUTHOR: Nabil Benketaf (www.benketaf.com)
+#        AUTHOR: Nabil Benketaf (www.nbenketaf.fr)
 #      BASED ON: jerem.zsh-theme from Jérémie Grodziski (www.grodziski.com)
 #       VERSION: 0.1
 #    SCREENSHOT: 
@@ -28,6 +28,38 @@
 
 bold=$(tput bold)
 
+DATE=
+# @see http://stackoverflow.com/a/26585789
+# count the visible caracters
+strlen () {
+    FOO=$1
+    local zero='%([BSUbfksu]|([FB]|){*})'
+    LEN=${#${(S%%)FOO//$~zero/}}
+    echo $LEN
+}
+
+# show right prompt with date ONLY when command is executed
+preexec () {
+    DATE=$(date "+[%d/%m/%y %H:%M:%S] ")
+    local len_right=$( strlen "$DATE" )
+    len_right=$(( $len_right+1 ))
+    local right_start=$(($COLUMNS - $len_right))
+
+    local len_cmd=$( strlen "$@" )
+    local len_prompt=$(strlen "$PROMPT" )
+    local len_left=$(($len_cmd+$len_prompt))
+
+    RDATE="\033[${right_start}C ${DATE}"
+
+    if [ $len_left -lt $right_start ]; then
+        # command does not overwrite right prompt
+        # ok to move up one line
+        echo -e "\033[1A${RDATE}"
+    else
+        echo -e "${RDATE}"
+    fi
+}
+
 function git_prompt_info() {
    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
    echo "$fg[white]on $reset_color$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
@@ -46,7 +78,7 @@ function precmd() {
 
 local ret_status="%(?:%{$green%}λ:%{$red%}λ%s)"
 PROMPT='$(git_prompt_status) ${ret_status} % %{$reset_color%}'
-RPROMPT='[%D{%d/%m/%y} %*]'
+#RPROMPT=$(date "+[%d/%m/%y %H:%M:%S]")
 
 MODE_INDICATOR="%{$fg_bold[red]%}❮%{$reset_color%}%{$fg[red]%}❮❮%{$reset_color%}"
 
