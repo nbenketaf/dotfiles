@@ -79,7 +79,6 @@ set noswapfile
 cmap w!! w !sudo tee % >/dev/null
 
 """ Solarized config from dr.bunsen
-syntax enable
 let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
@@ -97,10 +96,10 @@ if has('gui_running')
 "    set guifont=Inconsolata:h14
     "set guifont=Inconsolata\ for\ powerline:h14
     "set guifont=Inconsolata-g\ for\ Powerline:h12
-    set guifont=Office\ Code\ Pro:h13
-    set background=light
-else
-    set background=dark
+
+""" Set font ligatures
+    set macligatures
+    set guifont=Fira\ Code\ Retina:h14
 endif
 
 """ Remove scrollbars on gui mode
