@@ -13,10 +13,10 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 [alias]
-	ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short
-	lsg = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short --graph
-	ll = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short --numstat
-	llg = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short --numstat --graph
+	ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(auto)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short
+	lsg = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(auto)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short --graph
+	ll = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(auto)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short --numstat
+	llg = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(auto)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short --numstat --graph
 	la = "!git config -l | grep alias | cut -c 7-"
 	cp = cherry-pick
 	st = status -s
@@ -24,11 +24,12 @@
 	ci = commit
 	co = checkout
 	br = branch 
-	diff = diff --word-diff
-	dc = diff --cached
+	dif = diff --word-diff
+	dic = diff --cached
 	unstage = reset HEAD --
 	sl = stash list
 	sa = stash apply
 	ss = stash save
+	tidy = rebase -i @{upstream}
 [rerere]
 	enabled = true
