@@ -137,3 +137,6 @@ set showcmd
 
 """ Show undo tree
 nnoremap <F6> :UndotreeToggle<CR>
+
+""" Format JSON text
+nmap =j :%!python -m json.tool<CR>
