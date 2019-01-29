@@ -48,21 +48,26 @@ DISABLE_UPDATE_PROMPT=true
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bash git osx sublime mvn ssh-agent lein brew dircycle history jump tmux zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(bash git osx vim sublime mvn ssh-agent lein brew dircycle history jump tmux zsh-autosuggestions zsh-syntax-highlighting docker)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-# Set java 7 default version
-# export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+
+# Init jenv
+#if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
 # More convenient java_home use
-alias java_ls='/usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d[,_]" | cut -d , -f 1 | colrm 1 4 | grep -v Home'
-# Set particular java version as JAVA_HOME, usage : java_use 1.7
+alias java_ls='/usr/libexec/java_home -V 2>&1 | grep jdk | cut -d , -f 1 | colrm 1 4 | grep -v Home'
+
+# Set particular java version as JAVA_HOME, usage : java_use 1.8, 9
 function java_use() {
 	export JAVA_HOME=$(/usr/libexec/java_home -v $1)
         export PATH=$JAVA_HOME/bin:$PATH
 	java -version
 }
+
+# Set java 8 default version
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export PATH=$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -94,3 +99,8 @@ alias vi='vim'
 
 #SSH aliases
 alias zelda='ssh zelda'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
