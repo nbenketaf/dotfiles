@@ -140,3 +140,7 @@ nnoremap <F6> :UndotreeToggle<CR>
 
 """ Format JSON text
 nmap =j :%!python -m json.tool<CR>
+
+""" LimeLight Goyo integration
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
