@@ -48,7 +48,7 @@ DISABLE_UPDATE_PROMPT=true
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bash git osx vim sublime mvn ssh-agent lein brew dircycle history jump tmux zsh-autosuggestions zsh-syntax-highlighting docker)
+plugins=(git osx sublime mvn ssh-agent lein brew dircycle history jump tmux docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,8 +67,8 @@ function java_use() {
 	java -version
 }
 
-# Set java 8 default version
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# Set java 12 default version
+export JAVA_HOME=$(/usr/libexec/java_home -v 12)
 export PATH=$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -104,3 +104,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
