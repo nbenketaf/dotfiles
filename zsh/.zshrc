@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+export LC_ALL=en_US.UTF-8
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -92,7 +94,8 @@ export EDITOR="vim"
 # export ARCHFLAGS="-arch x86_64"
 #
 # Fuck alias
-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+eval $(thefuck --alias)
+
 alias vi='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
