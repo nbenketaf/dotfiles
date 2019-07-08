@@ -91,15 +91,11 @@ noremap <leader>yy "*Y
 """ Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
-""" Set Inconsolata default gui font
+""" Set Dank Mono default gui font
 if has('gui_running')
-"    set guifont=Inconsolata:h14
-    "set guifont=Inconsolata\ for\ powerline:h14
-    "set guifont=Inconsolata-g\ for\ Powerline:h12
-
 """ Set font ligatures
     set macligatures
-    set guifont=Fira\ Code\ Retina:h14
+    set guifont=Dank\ Mono \Regular:h14
 endif
 
 """ Remove scrollbars on gui mode
