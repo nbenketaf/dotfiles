@@ -4,6 +4,10 @@ syntax on
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 
+""" Enable italic text
+set t_ZH=[3m
+set t_ZR=[23m
+
 """ change the mapleader from \ to ,
 let mapleader=","
 
@@ -95,8 +99,11 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 if has('gui_running')
 """ Set font ligatures
     set macligatures
-    set guifont=Dank\ Mono \Regular:h14
+    set guifont=Dank\ Mono:h14
 endif
+
+""" Set comments in italic
+highlight Comment cterm=italic gui=italic
 
 """ Remove scrollbars on gui mode
 set guioptions-=r
